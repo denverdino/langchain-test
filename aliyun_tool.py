@@ -11,7 +11,7 @@ def aliyun_cli_tool(command) -> str:
 
 
 name = "aliyun_cli_tool"
-description = "This is Alibaba Cloud CLI. You can use it like: aliyun ecs DescribeInstances --region cn-hangzhou"
+description = "This is an Alibaba Cloud CLI tool. You can use it like, aliyun ecs DescribeInstances --region cn-hangzhou , or you can use it with jq filter, e.g. aliyun ecs DescribeInstances --region cn-hongkong | jq '.Instances.Instance[].InstanceName'"
 
 # create an instance of the custom langchain tool
 AliyunCli = Tool(

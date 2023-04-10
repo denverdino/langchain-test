@@ -55,12 +55,9 @@ def datetime_tool(request: str = None) -> str:
 # Note the "{{" and "}}": this double quotation is needed to avoid a runt-time error triggered by the agent instatiation.
 #
 name = "date_time"
-request_format = '{{"specific_variables":["variable_name"]}}'
 response_format = '{{"date":"<date>","time":"<time>"}}'
 description = f'''
-helps to retrieve today's date and current time.
-Input should be an optional JSON in the following format: '{request_format}'
-Output is a JSON in the following format: '{response_format}'
+This is the tool helps to retrieve today's date and current time. The input is empty string and the output is a JSON in the following format: '{response_format}'
 '''
 
 # create an instance of the custom langchain tool

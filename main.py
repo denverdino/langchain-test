@@ -9,7 +9,7 @@ from kubectl_tool import Kubectl
 
 
 
-llm = OpenAI(temperature=0.5)
+llm = OpenAI(temperature=0)
 llm_math_chain = LLMMathChain(llm=llm, verbose=True)
 tools = [
     Datetime,
@@ -28,8 +28,11 @@ agent = initialize_agent(
 #agent.run("What is tomorrow's date?")
 #agent.run("What will be time one day after?")
 #agent.run("What date will be coming Friday?")
+#agent.run("What date will be one month after?")
 #agent.run("Do I have some ECS instances in cn-hongkong region of Alibaba Cloud?")
 #agent.run("Return ip address in hongkong region of Alibaba Cloud if there is any ECS instance")
 #agent.run("如果阿里云香港地域有ECS返回其IP地址")
+agent.run("如果阿里云香港地域有ECS，返回其公网IP地址")
 #agent.run("List all pods in the default namespace from kubernetes cluster")
-agent.run("返回kubernetes cluster集群中kube-system命名空间下的所有Service")
+#agent.run("返回kubernetes cluster集群中kube-system命名空间下的所有Service的Cluster IP，并忽略没有值的Service")
+#agent.run("返回kubernetes cluster集群中kube-system命名空间下alibaba-cloud-cost-exporter Service的Cluster IP")
